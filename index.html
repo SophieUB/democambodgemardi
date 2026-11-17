@@ -301,28 +301,188 @@
 
       <h2>Vocabulaire</h2>
 
-      <h3>Leçon 1 : Se présenter</h3>
+    <style>
+  .sport-vocab {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 20px;
+    color: #243b53;
+  }
 
-      <p>
-        Aujourd'hui, nous apprenons
-        à nous présenter en français.
-      </p>
+  .sport-vocab button {
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: 0;
+    border-radius: 10px;
+    background: #243b53;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 
-      <div class="exemple">
-        <p>👋 Bonjour !</p>
-        <p>Je m'appelle Marie.</p>
-        <p>J'ai 20 ans.</p>
-        <p>Je suis étudiante.</p>
-        <p>J'habite à Paris.</p>
-      </div>
+  .sport-vocab button:focus-visible {
+    outline: 3px solid #ffcf50;
+    outline-offset: 3px;
+  }
 
-      <h3>Les expressions utiles</h3>
+  .sport-vocab .table-scroll {
+    overflow-x: auto;
+  }
 
-      <ul>
-        <li>Bonjour : pour saluer.</li>
-        <li>Je m'appelle... : pour dire son nom.</li>
-        <li>J'ai ... ans : pour dire son âge.</li>
-        <li>J'habite à... : pour dire sa ville.</li>
-        <li>Au revoir : pour dire au revoir.</li>
-      </ul>
+  .sport-vocab table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
 
+  .sport-vocab caption {
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .sport-vocab th,
+  .sport-vocab td {
+    padding: 14px;
+    border: 1px solid #d5dce3;
+    text-align: left;
+  }
+
+  .sport-vocab th {
+    background: #ffd454;
+  }
+
+  .sport-vocab tbody tr:nth-child(even) {
+    background: #f8f5ec;
+  }
+
+  .sport-vocab [lang="km"] {
+    font-family: "Noto Sans Khmer", "Khmer OS", sans-serif;
+    line-height: 1.8;
+  }
+
+  .sport-vocab.khmer-masque .col-khmer {
+    display: none;
+  }
+</style>
+
+<div class="sport-vocab" id="vocabulaire-sport">
+  <h3>⚽ Le sport : 15 mots à apprendre</h3>
+  <p>Lis les mots, puis masque le khmer pour tester ta mémoire.</p>
+
+  <button
+    type="button"
+    id="bouton-khmer"
+    aria-controls="tableau-sport"
+    aria-expanded="true"
+  >
+    Masquer le khmer
+  </button>
+
+  <div class="table-scroll">
+    <table id="tableau-sport">
+      <caption>Vocabulaire du sport en français, anglais et khmer</caption>
+      <thead>
+        <tr>
+          <th scope="col">Français</th>
+          <th scope="col">Anglais</th>
+          <th scope="col" class="col-khmer">Khmer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>le sport</td>
+          <td lang="en">sport</td>
+          <td class="col-khmer" lang="km">កីឡា</td>
+        </tr>
+        <tr>
+          <td>le football</td>
+          <td lang="en">football / soccer</td>
+          <td class="col-khmer" lang="km">កីឡាបាល់ទាត់</td>
+        </tr>
+        <tr>
+          <td>le basket-ball</td>
+          <td lang="en">basketball</td>
+          <td class="col-khmer" lang="km">កីឡាបាល់បោះ</td>
+        </tr>
+        <tr>
+          <td>le volley-ball</td>
+          <td lang="en">volleyball</td>
+          <td class="col-khmer" lang="km">កីឡាបាល់ទះ</td>
+        </tr>
+        <tr>
+          <td>le tennis</td>
+          <td lang="en">tennis</td>
+          <td class="col-khmer" lang="km">កីឡាវាយកូនបាល់</td>
+        </tr>
+        <tr>
+          <td>le badminton</td>
+          <td lang="en">badminton</td>
+          <td class="col-khmer" lang="km">កីឡាវាយសី</td>
+        </tr>
+        <tr>
+          <td>la natation</td>
+          <td lang="en">swimming</td>
+          <td class="col-khmer" lang="km">កីឡាហែលទឹក</td>
+        </tr>
+        <tr>
+          <td>le cyclisme</td>
+          <td lang="en">cycling</td>
+          <td class="col-khmer" lang="km">កីឡាជិះកង់</td>
+        </tr>
+        <tr>
+          <td>la course à pied</td>
+          <td lang="en">running</td>
+          <td class="col-khmer" lang="km">ការរត់</td>
+        </tr>
+        <tr>
+          <td>le yoga</td>
+          <td lang="en">yoga</td>
+          <td class="col-khmer" lang="km">យូហ្គា</td>
+        </tr>
+        <tr>
+          <td>une équipe</td>
+          <td lang="en">a team</td>
+          <td class="col-khmer" lang="km">ក្រុម</td>
+        </tr>
+        <tr>
+          <td>un ballon</td>
+          <td lang="en">a ball</td>
+          <td class="col-khmer" lang="km">បាល់</td>
+        </tr>
+        <tr>
+          <td>courir</td>
+          <td lang="en">to run</td>
+          <td class="col-khmer" lang="km">រត់</td>
+        </tr>
+        <tr>
+          <td>nager</td>
+          <td lang="en">to swim</td>
+          <td class="col-khmer" lang="km">ហែលទឹក</td>
+        </tr>
+        <tr>
+          <td>faire du vélo</td>
+          <td lang="en">to ride a bicycle</td>
+          <td class="col-khmer" lang="km">ជិះកង់</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const rubrique = document.getElementById("vocabulaire-sport");
+    const bouton = document.getElementById("bouton-khmer");
+
+    bouton.addEventListener("click", function () {
+      const masque = rubrique.classList.toggle("khmer-masque");
+
+      bouton.textContent = masque
+        ? "Afficher le khmer"
+        : "Masquer le khmer";
+
+      bouton.setAttribute("aria-expanded", String(!masque));
+    });
+  })();
+</script>
