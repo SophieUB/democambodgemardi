@@ -1,1 +1,728 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon espace FLE - Niveau A1.1</title>
+
+  <style>
+    :root {
+      --jaune: #FFCF56;
+      --corail: #FF8066;
+      --turquoise: #5CBCC5;
+      --creme: #F8F4E9;
+      --bleu: #253A53;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--creme);
+      color: var(--bleu);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--bleu);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px;
+      background: white;
+    }
+
+    nav a {
+      color: var(--bleu);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: var(--jaune);
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .bienvenue {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .grille {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .carte {
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px #253A5315;
+    }
+
+    .carte h2 {
+      margin-top: 0;
+    }
+
+    .jaune {
+      background: var(--jaune);
+    }
+
+    .corail {
+      background: var(--corail);
+    }
+
+    .turquoise {
+      background: var(--turquoise);
+    }
+
+    .creme {
+      background: white;
+      border: 2px solid var(--jaune);
+    }
+
+    button, .bouton {
+      display: inline-block;
+      background: var(--bleu);
+      color: white;
+      border: none;
+      border-radius: 9px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    button:hover,
+    button:focus,
+    .bouton:hover,
+    .bouton:focus {
+      background: #395775;
+    }
+
+    section.activite {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 35px;
+      box-shadow: 0 4px 12px #253A5310;
+    }
+
+    .exemple {
+      background: var(--creme);
+      border-left: 5px solid var(--turquoise);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    input, select {
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #9AA6B2;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .question {
+      margin: 20px 0;
+    }
+
+    .question label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .resultat {
+      font-weight: bold;
+      margin-top: 15px;
+      min-height: 25px;
+    }
+
+    .chat {
+      border: 2px solid var(--turquoise);
+      border-radius: 14px;
+      padding: 20px;
+      background: white;
+    }
+
+    .messages {
+      background: var(--creme);
+      padding: 15px;
+      border-radius: 10px;
+      min-height: 130px;
+      max-height: 260px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background: var(--bleu);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      main {
+        padding: 15px;
+      }
+
+      section.activite {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🌍 Bienvenue dans mon espace FLE !</h1>
+    <p>Apprenons le français ensemble 🇫🇷</p>
+    <p>Niveau A1.1 - Étudiants universitaires</p>
+  </header>
+
+  <nav aria-label="Navigation principale">
+    <a href="#apprendre">J'apprends</a>
+    <a href="#entrainer">Je m'entraîne</a>
+    <a href="#ecouter">J'écoute et je parle</a>
+    <a href="#progresser">Je progresse</a>
+    <a href="#assistant">Assistant pédagogique</a>
+  </nav>
+
+  <main>
+
+    <div class="bienvenue">
+      <h2>Bonjour et bienvenue ! 👋</h2>
+      <p>
+        Ici, tu peux apprendre le français
+        à ton rythme.
+      </p>
+      <p>
+        Découvre les leçons, fais les exercices
+        et progresse chaque jour !
+      </p>
+    </div>
+
+    <!-- LES QUATRE RUBRIQUES -->
+
+    <div class="grille">
+
+      <article class="carte jaune">
+        <h2>📚 J'apprends</h2>
+        <p>
+          Découvre les mots et les expressions
+          en français.
+        </p>
+        <a class="bouton" href="#apprendre">
+          Commencer
+        </a>
+      </article>
+
+      <article class="carte corail">
+        <h2>✏️ Je m'entraîne</h2>
+        <p>
+          Fais des exercices pour pratiquer
+          le français.
+        </p>
+        <a class="bouton" href="#entrainer">
+          M'entraîner
+        </a>
+      </article>
+
+      <article class="carte turquoise">
+        <h2>🎧 J'écoute et je parle</h2>
+        <p>
+          Écoute et répète des phrases
+          simples.
+        </p>
+        <a class="bouton" href="#ecouter">
+          Écouter
+        </a>
+      </article>
+
+      <article class="carte creme">
+        <h2>🏆 Je progresse</h2>
+        <p>
+          Teste tes connaissances avec
+          un petit quiz.
+        </p>
+        <a class="bouton" href="#progresser">
+          Faire le quiz
+        </a>
+      </article>
+
+    </div>
+
+    <!-- RUBRIQUE 1 -->
+
+    <section class="activite" id="apprendre">
+
+      <h2>📚 1. J'apprends</h2>
+
+      <h3>Leçon 1 : Se présenter</h3>
+
+      <p>
+        Aujourd'hui, nous apprenons
+        à nous présenter en français.
+      </p>
+
+      <div class="exemple">
+        <p>👋 Bonjour !</p>
+        <p>Je m'appelle Marie.</p>
+        <p>J'ai 20 ans.</p>
+        <p>Je suis étudiante.</p>
+        <p>J'habite à Paris.</p>
+      </div>
+
+      <h3>Les expressions utiles</h3>
+
+      <ul>
+        <li>Bonjour : pour saluer.</li>
+        <li>Je m'appelle... : pour dire son nom.</li>
+        <li>J'ai ... ans : pour dire son âge.</li>
+        <li>J'habite à... : pour dire sa ville.</li>
+        <li>Au revoir : pour dire au revoir.</li>
+      </ul>
+
+      <button onclick="lireTexte(
+        'Bonjour ! Je m’appelle Marie. ' +
+        'J’ai vingt ans. Je suis étudiante. ' +
+        'J’habite à Paris.'
+      )">
+        🔊 Écouter la présentation
+      </button>
+
+    </section>
+
+    <!-- RUBRIQUE 2 -->
+
+    <section class="activite" id="entrainer">
+
+      <h2>✏️ 2. Je m'entraîne</h2>
+
+      <h3>Exercice : Complète la phrase</h3>
+
+      <p>
+        Choisis le bon mot.
+      </p>
+
+      <div class="question">
+        <label for="reponse1">
+          Bonjour ! Je _____ Marie.
+        </label>
+
+        <select id="reponse1">
+          <option value="">Choisis une réponse</option>
+          <option value="suis">suis</option>
+          <option value="appelle">m'appelle</option>
+          <option value="ai">ai</option>
+        </select>
+      </div>
+
+      <button onclick="corrigerExercice()">
+        Vérifier ma réponse
+      </button>
+
+      <p id="resultatExercice"
+         class="resultat"
+         role="status"
+         aria-live="polite"></p>
+
+    </section>
+
+    <!-- RUBRIQUE 3 -->
+
+    <section class="activite" id="ecouter">
+
+      <h2>🎧 3. J'écoute et je parle</h2>
+
+      <h3>Dialogue : À l'université</h3>
+
+      <div class="exemple">
+        <p><strong>Paul :</strong> Bonjour !</p>
+        <p><strong>Anna :</strong> Bonjour !</p>
+        <p><strong>Paul :</strong> Tu t'appelles comment ?</p>
+        <p><strong>Anna :</strong> Je m'appelle Anna.</p>
+        <p><strong>Paul :</strong> Tu es étudiante ?</p>
+        <p><strong>Anna :</strong> Oui, je suis étudiante.</p>
+      </div>
+
+      <button onclick="lireTexte(
+        'Paul : Bonjour ! ' +
+        'Anna : Bonjour ! ' +
+        'Paul : Tu t’appelles comment ? ' +
+        'Anna : Je m’appelle Anna. ' +
+        'Paul : Tu es étudiante ? ' +
+        'Anna : Oui, je suis étudiante.'
+      )">
+        🔊 Écouter le dialogue
+      </button>
+
+      <p>
+        <strong>À toi !</strong>
+        Écoute et répète les phrases.
+      </p>
+
+    </section>
+
+    <!-- RUBRIQUE 4 -->
+
+    <section class="activite" id="progresser">
+
+      <h2>🏆 4. Je progresse</h2>
+
+      <h3>Mini-quiz : Les présentations</h3>
+
+      <div class="question">
+        <label for="quiz1">
+          1. Comment dit-on son nom ?
+        </label>
+
+        <select id="quiz1">
+          <option value="">Choisis</option>
+          <option value="a">J'ai 20 ans.</option>
+          <option value="b">Je m'appelle Lucas.</option>
+          <option value="c">Au revoir.</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="quiz2">
+          2. Comment dit-on son âge ?
+        </label>
+
+        <select id="quiz2">
+          <option value="">Choisis</option>
+          <option value="a">J'ai 19 ans.</option>
+          <option value="b">Je suis étudiant.</option>
+          <option value="c">Bonjour !</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="quiz3">
+          3. Quelle phrase est correcte ?
+        </label>
+
+        <select id="quiz3">
+          <option value="">Choisis</option>
+          <option value="a">Je suis appelle Marie.</option>
+          <option value="b">J'ai appelle Marie.</option>
+          <option value="c">Je m'appelle Marie.</option>
+        </select>
+      </div>
+
+      <button onclick="corrigerQuiz()">
+        Voir mon résultat
+      </button>
+
+      <p id="resultatQuiz"
+         class="resultat"
+         role="status"
+         aria-live="polite"></p>
+
+    </section>
+
+    <!-- ASSISTANT PEDAGOGIQUE -->
+
+    <section class="activite" id="assistant">
+
+      <h2>🤖 Mon assistant pédagogique</h2>
+
+      <p>
+        Bonjour ! Je suis Léo, ton assistant
+        de français.
+      </p>
+
+      <p>
+        Tu peux me poser une question
+        sur les présentations.
+      </p>
+
+      <div class="chat">
+
+        <div id="messages"
+             class="messages"
+             role="log"
+             aria-live="polite">
+          <div class="message">
+            <strong>🤖 Léo :</strong>
+            Bonjour ! Comment puis-je t'aider ?
+          </div>
+        </div>
+
+        <label for="questionIA">
+          Écris ta question :
+        </label>
+
+        <input
+          type="text"
+          id="questionIA"
+          placeholder="Ex. : Comment dire mon nom ?"
+        >
+
+        <button onclick="repondreAssistant()">
+          Envoyer
+        </button>
+
+      </div>
+
+      <p>
+        <small>
+          Cet assistant est une démonstration
+          avec des réponses prédéfinies.
+          Il n'est pas encore connecté
+          à une intelligence artificielle.
+        </small>
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>🌍 Mon espace FLE - Niveau A1.1</p>
+    <p>Apprendre le français avec plaisir !</p>
+  </footer>
+
+  <script>
+
+    // LECTURE VOCALE
+
+    function lireTexte(texte) {
+      if (!('speechSynthesis' in window)) {
+        alert("La lecture vocale n'est pas disponible.");
+        return;
+      }
+
+      speechSynthesis.cancel();
+
+      const voix = new SpeechSynthesisUtterance(texte);
+      voix.lang = "fr-FR";
+      voix.rate = 0.85;
+
+      speechSynthesis.speak(voix);
+    }
+
+
+    // CORRECTION DE L'EXERCICE
+
+    function corrigerExercice() {
+      const reponse =
+        document.getElementById("reponse1").value;
+
+      const resultat =
+        document.getElementById("resultatExercice");
+
+      if (reponse === "appelle") {
+        resultat.textContent =
+          "Bravo ! 🎉 Je m'appelle Marie.";
+      } else if (reponse === "") {
+        resultat.textContent =
+          "Choisis une réponse pour commencer.";
+      } else {
+        resultat.textContent =
+          "Essaie encore ! 💪 " +
+          "Indice : pour dire son nom, " +
+          "on utilise « Je m'... ».";
+      }
+    }
+
+
+    // CORRECTION DU QUIZ
+
+    function corrigerQuiz() {
+      const r1 = document.getElementById("quiz1").value;
+      const r2 = document.getElementById("quiz2").value;
+      const r3 = document.getElementById("quiz3").value;
+
+      const resultat =
+        document.getElementById("resultatQuiz");
+
+      if (!r1 || !r2 || !r3) {
+        resultat.textContent =
+          "Réponds aux trois questions.";
+        return;
+      }
+
+      let score = 0;
+
+      if (r1 === "b") score++;
+      if (r2 === "a") score++;
+      if (r3 === "c") score++;
+
+      if (score === 3) {
+        resultat.textContent =
+          "🎉 Bravo ! 3/3 ! Excellent travail !";
+      } else {
+        resultat.textContent =
+          "Tu as " + score + "/3. " +
+          "Continue, tu progresses ! 💪";
+      }
+    }
+
+
+    // ASSISTANT PEDAGOGIQUE DE DEMONSTRATION
+
+    function repondreAssistant() {
+      const champ =
+        document.getElementById("questionIA");
+
+      const question = champ.value.trim();
+
+      if (!question) return;
+
+      const messages =
+        document.getElementById("messages");
+
+      ajouterMessage("👤 Toi", question);
+
+      const q = question
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+      let reponse = "";
+
+      if (
+        q.includes("nom") ||
+        q.includes("appelle")
+      ) {
+        reponse =
+          "Pour dire ton nom, commence par " +
+          "« Je m'... ». " +
+          "Peux-tu compléter la phrase ?";
+      }
+
+      else if (
+        q.includes("age") ||
+        q.includes("ans")
+      ) {
+        reponse =
+          "Pour dire ton âge, utilise le verbe " +
+          "avoir. Exemple : « J'ai 20 ans. » " +
+          "Et toi, quel âge as-tu ?";
+      }
+
+      else if (
+        q.includes("bonjour") ||
+        q.includes("salut")
+      ) {
+        reponse =
+          "Bonjour ! 😊 Comment tu t'appelles ?";
+      }
+
+      else if (
+        q.includes("exercice") ||
+        q.includes("quiz")
+      ) {
+        reponse =
+          "Voici un petit exercice : " +
+          "complète « Je _____ étudiant. » " +
+          "Indice : pense au verbe être !";
+      }
+
+      else if (
+        q.includes("habite") ||
+        q.includes("ville")
+      ) {
+        reponse =
+          "Pour parler de ta ville, dis : " +
+          "« J'habite à... ». " +
+          "Dans quelle ville habites-tu ?";
+      }
+
+      else {
+        reponse =
+          "Bonne question ! 😊 " +
+          "Je peux t'aider à dire ton nom, " +
+          "ton âge ou ta ville. " +
+          "Tu peux aussi demander un exercice.";
+      }
+
+      ajouterMessage("🤖 Léo", reponse);
+
+      champ.value = "";
+      champ.focus();
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+
+    // AJOUTER UN MESSAGE AU CHAT
+
+    function ajouterMessage(auteur, contenu) {
+      const messages =
+        document.getElementById("messages");
+
+      const bloc = document.createElement("div");
+      bloc.className = "message";
+
+      const titre = document.createElement("strong");
+      titre.textContent = auteur + " : ";
+
+      const texte = document.createElement("span");
+      texte.textContent = contenu;
+
+      bloc.appendChild(titre);
+      bloc.appendChild(texte);
+      messages.appendChild(bloc);
+    }
+
+
+    // ENVOYER AVEC LA TOUCHE ENTREE
+
+    document
+      .getElementById("questionIA")
+      .addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          repondreAssistant();
+        }
+      });
+
+  </script>
+
+</body>
+</html>
+
